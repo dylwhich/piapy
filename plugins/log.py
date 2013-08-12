@@ -10,8 +10,7 @@ def log(event):
 def init():
     logger = plugin.Plugin()
     logger.name = "logger"
-    logger.events = [ "notification" ]
     logger.handle = log
-    router.register(logger)
+    router.register_default(logger)
 
 init()
