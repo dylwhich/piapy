@@ -10,7 +10,8 @@ import plugins
 # Prepare a notification event.
 e = plugin.Event()
 e.name = "notification"
-e.payload = { "data": "Hello, world.", "error": None }
+e.payload = { "summary": "piapy",
+              "body": "self-generated test notification"}
 
 # Send e to the router
 router.route(e)
