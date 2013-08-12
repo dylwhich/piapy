@@ -26,6 +26,15 @@ class Router:
     
     def route(self, event):
         """Call handle() on all plugins for a given event type."""
-        plugins = self.routes[event.name]
-        for plugin in plugins:
-            plugin.handle(event)
+        if event.name in self.routes:
+            plugins = self.routes[event.name]
+            for plugin in plugins:
+                plugin.handle(event)
+
+def register(plugin):
+    r.register(plugin)
+
+def route(event):
+    r.route(event)
+
+r = Router()
